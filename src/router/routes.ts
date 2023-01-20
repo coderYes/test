@@ -3,18 +3,12 @@ import type { RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/main'
   },
   {
     path: '/main',
     name: 'main',
-    component: () => import('@/views/main/main.vue'),
-    children: [
-      {
-        path: '/main',
-        redirect: '/main/analysis/overview'
-      }
-    ]
+    component: () => import('@/views/main/main.vue')
   },
   {
     path: '/login',

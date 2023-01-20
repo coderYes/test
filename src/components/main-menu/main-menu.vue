@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import useLogin from '@/stores/login/login'
+import { mapPathToMenu } from '@/utils/map-menu'
 withDefaults(
   defineProps<{
     isFold: boolean
@@ -9,6 +12,8 @@ withDefaults(
   }
 )
 const loginStore = useLogin()
+const route = useRoute()
+const pathMenu = computed(() => mapPathToMenu(route.path, loginStore.userMenus))
 </script>
 
 <template>
@@ -18,7 +23,7 @@ const loginStore = useLogin()
       <h2 class="title" v-show="!isFold">cms-ts</h2>
     </div>
     <el-menu
-      default-active="/main/analysis/overview"
+      :default-active="pathMenu.url"
       text-color="#b7bdc3"
       active-text-color="#fff"
       router

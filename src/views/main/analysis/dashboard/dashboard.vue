@@ -8,6 +8,5 @@
 
 <style scoped lang="less">
 .dashboard {
-  color: #fff;
 }
 </style>

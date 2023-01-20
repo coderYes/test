@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import HeaderInfo from './c-cpns/header-info.vue'
+import hederCrumb from './c-cpns/heder-crumb.vue'
 const emit = defineEmits(['foldChange'])
 const isFold = ref(false)
 const handleMenuIconClick = () => {
@@ -15,9 +16,7 @@ const handleMenuIconClick = () => {
       <el-icon class="icon" @click="handleMenuIconClick">
         <component :is="isFold ? 'Expand' : 'Fold'" />
       </el-icon>
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-      </el-breadcrumb>
+      <heder-crumb></heder-crumb>
     </div>
     <div class="right">
       <HeaderInfo />

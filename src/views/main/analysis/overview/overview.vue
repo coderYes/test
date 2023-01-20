@@ -8,6 +8,5 @@
 
 <style scoped lang="less">
 .overview {
-  color: #fff;
 }
 </style>
