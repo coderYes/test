@@ -1,0 +1,13 @@
+.vscode
+package.json
+pnpm-*
+
+/dist/*
+.local
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
