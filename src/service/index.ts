@@ -8,7 +8,6 @@ const hjRequest = new HJRequest({
   interceptors: {
     requestIntercptor(config) {
       const loginInfo = localCache.getCache('pinia-login')
-      console.log('loginInfo', loginInfo)
       if (config.headers && loginInfo?.token) {
         ;(config.headers as AxiosHeaders).set('Authorization', loginInfo.token)
       }

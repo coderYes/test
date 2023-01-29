@@ -33,7 +33,7 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   const loginInfo = localCache.getCache('pinia-login')
-  if (to.path.startsWith('/main') && !loginInfo.token) {
+  if (to.path.startsWith('/main') && !loginInfo?.token) {
     return '/login'
   }
   if (to.path === '/main') {

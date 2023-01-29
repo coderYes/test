@@ -10,6 +10,9 @@ specifiers:
   '@vue/tsconfig': ^0.1.3
   axios: ^1.2.2
   consola: ^2.15.3
+  countup.js: ^2.4.1
+  dayjs: ^1.11.7
+  echarts: ^5.4.1
   element-plus: ^2.2.28
   eslint: ^8.22.0
   eslint-config-prettier: ^8.6.0
@@ -33,6 +36,9 @@ specifiers:
 dependencies:
   '@element-plus/icons-vue': 2.0.10_vue@3.2.45
   axios: 1.2.2
+  countup.js: 2.4.1
+  dayjs: 1.11.7
+  echarts: 5.4.1
   element-plus: 2.2.28_vue@3.2.45
   normalize.css: 8.0.1
   pinia: 2.0.29_e7lp6ggkpgyi5vqd44m2kxvk6i
@@ -1008,6 +1014,10 @@ packages:
       is-what: 3.14.1
     dev: true
 
+  /countup.js/2.4.1:
+    resolution: {integrity: sha512-NicJ8CZkPwOAAyivQl4oSeb0qoxtekg6JmlYtLQKQt+hbRD5Wz4zVrewWl/ixNOkFPISn4c9Z/GzfUaIVERJQg==}
+    dev: false
+
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
     engines: {node: '>=4.8'}
@@ -1106,6 +1116,13 @@ packages:
       no-case: 3.0.4
       tslib: 2.4.1
     dev: true
+
+  /echarts/5.4.1:
+    resolution: {integrity: sha512-9ltS3M2JB0w2EhcYjCdmtrJ+6haZcW6acBolMGIuf01Hql1yrIV01L1aRj7jsaaIULJslEP9Z3vKlEmnJaWJVQ==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.4.1
+    dev: false
 
   /element-plus/2.2.28_vue@3.2.45:
     resolution: {integrity: sha512-BsxF7iEaBydmRfw1Tt++EO9jRBjbtJr7ZRIrnEwz4J3Cwa1IzHCNCcx3ZwcYTlJq9CYFxv94JnbNr1EbkTou3A==}
@@ -2718,6 +2735,10 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: true
@@ -3063,3 +3084,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zrender/5.4.1:
+    resolution: {integrity: sha512-M4Z05BHWtajY2241EmMPHglDQAJ1UyHQcYsxDNzD9XLSkPDqMq4bB28v9Pb4mvHnVQ0GxyTklZ/69xCFP6RXBA==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false

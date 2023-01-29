@@ -70,3 +70,45 @@ export function mapPathToBreadcrumbs(path: string, userMenus: any[]) {
   }
   return breadcrumbs
 }
+
+/**
+ * 菜单映射ID列表
+ * @param munuList 映射的菜单
+ */
+export function mapMenuListToIds(munuList: any[]) {
+  const ids: number[] = []
+  function recuresGetId(menus: any[]) {
+    for (const item of menus) {
+      if (item.children) {
+        recuresGetId(item.children)
+      } else {
+        ids.push(item.id)
+      }
+    }
+  }
+
+  recuresGetId(munuList)
+
+  return ids
+}
+
+/**
+ * 从菜单映射到按钮的权限
+ * @param menuList 菜单列表
+ * @returns 返回按钮权限的数组(string)
+ */
+export function mapMenuListToPermissions(menuList: any[]) {
+  const permissions: string[] = []
+  function recuresGetPermissions(menus: any[]) {
+    for (const item of menus) {
+      if (item.type === 3) {
+        permissions.push(item.permission)
+      } else {
+        recuresGetPermissions(item.children ?? [])
+      }
+    }
+  }
+  console.log('permissions', permissions)
+  recuresGetPermissions(menuList)
+  return permissions
+}

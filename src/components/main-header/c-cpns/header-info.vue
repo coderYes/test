@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import router from '@/router'
 import { localCache } from '@/utils/cache'
-import useLogin from '@/stores/login/login'
-const loginStore = useLogin()
+
 const handleLogoutClick = () => {
-  loginStore.$reset()
   localCache.removeCache('pinia-login')
+  localCache.removeCache('pinia-system')
+  localCache.removeCache('pinia-main')
   router.push('/login')
 }
 </script>

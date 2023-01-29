@@ -1,17 +1,28 @@
 <script setup lang="ts">
 import userSearch from './c-cpns/user-search.vue'
+import userContent from './c-cpns/user-content.vue'
+import userDialog from './c-cpns/user-dialog.vue'
+import usePageContent from '@/hooks/usePageContent'
+import usePageDialog from '@/hooks/usePageDialog'
+
+// content
+const { handleQueryClick, handleResetClick, pageContentRef } = usePageContent()
+// diglog
+const { handleNewClick, handleEditClick, pageDialogRef } = usePageDialog()
 </script>
 
 <template>
   <div class="user">
-    <div class="search">
-      <user-search></user-search>
-    </div>
-    <div class="content">
-      <div class="header">头部</div>
-      <div class="table">表单</div>
-      <div class="pagenition">分页</div>
-    </div>
+    <user-search
+      @query-click="handleQueryClick"
+      @reset-click="handleResetClick"
+    ></user-search>
+    <user-content
+      @edit-click="handleEditClick"
+      @new-click="handleNewClick"
+      ref="pageContentRef"
+    ></user-content>
+    <user-dialog ref="pageDialogRef" />
   </div>
 </template>
 
